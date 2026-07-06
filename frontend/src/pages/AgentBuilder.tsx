@@ -44,9 +44,44 @@ export const AgentBuilder: React.FC = () => {
     { id: '1', type: 'Trigger', label: 'Customer Query Received', x: 50, y: 150 },
     { id: '2', type: 'Reasoning', label: 'Atlas Plan Decomposition', x: 250, y: 150 },
     { id: '3', type: 'Condition', label: 'Query matches Customer Support?', x: 450, y: 150 },
-    { id: '4', type: 'Action', label: 'Resolve CRM Ticket', x: 680, y: 80 },
-    { id: '5', type: 'Action', label: 'Notify Manager (High Value)', x: 680, y: 220 }
+    { id: '4', type: 'Action', label: 'Resolve CRM Ticket', x: 680, y: 50 },
+    { id: '5', type: 'Action', label: 'Notify Manager (High Value)', x: 680, y: 250 }
   ]);
+
+  const [links, setLinks] = useState<Array<{ from: string; to: string }>>([
+    { from: '1', to: '2' },
+    { from: '2', to: '3' },
+    { from: '3', to: '4' },
+    { from: '3', to: '5' }
+  ]);
+
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseDown = (id: string, e: React.MouseEvent) => {
+    setDraggingId(id);
+    const node = nodes.find(n => n.id === id);
+    if (node) {
+      setDragOffset({
+        x: e.clientX - node.x,
+        y: e.clientY - node.y
+      });
+    }
+    e.stopPropagation();
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!draggingId) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const newX = Math.max(0, Math.min(rect.width - 180, e.clientX - dragOffset.x));
+    const newY = Math.max(0, Math.min(rect.height - 80, e.clientY - dragOffset.y));
+
+    setNodes(nodes.map(n => n.id === draggingId ? { ...n, x: newX, y: newY } : n));
+  };
+
+  const handleMouseUp = () => {
+    setDraggingId(null);
+  };
 
   const loadAgents = async () => {
     try {
@@ -123,20 +158,28 @@ export const AgentBuilder: React.FC = () => {
       CRM: 'CRM Record Update',
       API: 'Call External API Gateway'
     };
+    const lastNode = nodes[nodes.length - 1];
+    const newX = lastNode ? Math.min(lastNode.x + 150, 700) : 100;
+    const newY = lastNode ? lastNode.y + 40 : 150;
+    
     setNodes([
       ...nodes,
       {
         id: newId,
         type,
         label: labels[type] || 'New Action Node',
-        x: 350,
-        y: 100 + nodes.length * 20
+        x: newX,
+        y: newY
       }
     ]);
+    if (lastNode) {
+      setLinks([...links, { from: lastNode.id, to: newId }]);
+    }
   };
 
   const removeVisualNode = (id: string) => {
     setNodes(nodes.filter(n => n.id !== id));
+    setLinks(links.filter(l => l.from !== id && l.to !== id));
   };
 
   return (
@@ -355,28 +398,65 @@ export const AgentBuilder: React.FC = () => {
           </div>
 
           {/* Visual Workspace Canvas */}
-          <div className="flex-1 relative bg-bg-primary border border-borderColor/60 rounded-2xl overflow-hidden p-4 select-none">
+          <div
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            className="flex-1 relative bg-bg-primary border border-borderColor/60 rounded-2xl overflow-hidden p-4 select-none"
+          >
             {/* SVG Connections Layer */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              {/* Draw connected lines */}
-              <path d="M 150 170 C 200 170, 200 170, 250 170" stroke="var(--color-text-muted)" strokeWidth="1.5" fill="none" />
-              <path d="M 370 170 C 400 170, 400 170, 450 170" stroke="var(--color-text-muted)" strokeWidth="1.5" fill="none" />
-              <path d="M 570 170 C 620 170, 620 100, 680 100" stroke="var(--color-brand-500)" strokeWidth="1.5" fill="none" strokeDasharray="4" />
-              <path d="M 570 170 C 620 170, 620 240, 680 240" stroke="var(--color-brand-500)" strokeWidth="1.5" fill="none" strokeDasharray="4" />
+              {links.map((link, idx) => {
+                const fromNode = nodes.find(n => n.id === link.from);
+                const toNode = nodes.find(n => n.id === link.to);
+                if (!fromNode || !toNode) return null;
+
+                const fromX = fromNode.x + 176; // w-44 is 176px
+                const fromY = fromNode.y + 35;
+                const toX = toNode.x;
+                const toY = toNode.y + 35;
+
+                const cp1x = fromX + Math.max(30, (toX - fromX) / 2);
+                const cp1y = fromY;
+                const cp2x = toX - Math.max(30, (toX - fromX) / 2);
+                const cp2y = toY;
+
+                return (
+                  <path
+                    key={idx}
+                    d={`M ${fromX} ${fromY} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${toX} ${toY}`}
+                    stroke="var(--color-brand-500)"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeDasharray={fromNode.type === 'Condition' ? '4' : '0'}
+                    className="opacity-70 transition-all duration-75"
+                  />
+                );
+              })}
             </svg>
 
             {/* Nodes */}
             {nodes.map(node => (
               <div
                 key={node.id}
-                style={{ left: `${node.x}px`, top: `${node.y}px` }}
-                className="absolute w-44 p-3 bg-bg-secondary border border-borderColor rounded-xl shadow-md flex flex-col justify-between text-[10px] group transition-all"
+                onMouseDown={(e) => handleMouseDown(node.id, e)}
+                style={{ 
+                  left: `${node.x}px`, 
+                  top: `${node.y}px`,
+                  cursor: draggingId === node.id ? 'grabbing' : 'grab'
+                }}
+                className={`absolute w-44 p-3 bg-bg-secondary border rounded-xl shadow-md flex flex-col justify-between text-[10px] group transition-all select-none ${
+                  draggingId === node.id ? 'border-brand-500 shadow-lg scale-105' : 'border-borderColor'
+                }`}
               >
                 <div className="flex items-center justify-between border-b border-borderColor/40 pb-1.5 mb-1.5">
                   <span className="font-bold text-brand-600 uppercase text-[8px]">{node.type}</span>
                   <button
-                    onClick={() => removeVisualNode(node.id)}
-                    className="p-0.5 opacity-0 group-hover:opacity-100 text-red-500 hover:bg-red-500/10 rounded transition-opacity"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeVisualNode(node.id);
+                    }}
+                    className="p-0.5 opacity-0 group-hover:opacity-100 text-red-500 hover:bg-red-500/10 rounded transition-opacity cursor-pointer"
                   >
                     <Trash2 className="w-3 h-3" />
                   </button>

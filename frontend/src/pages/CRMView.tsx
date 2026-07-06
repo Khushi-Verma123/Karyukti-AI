@@ -22,12 +22,12 @@ export const CRMView: React.FC = () => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [selectedEntity, setSelectedEntity] = useState<any | null>(null);
 
-  // New Lead Form States
-  const [leadName, setLeadName] = useState('');
-  const [leadCompany, setLeadCompany] = useState('');
-  const [leadEmail, setLeadEmail] = useState('');
-  const [leadValue, setLeadValue] = useState(10000);
-  const [leadStatus, setLeadStatus] = useState('New');
+  // Generic Form State for dynamic additions
+  const [formData, setFormData] = useState<Record<string, any>>({});
+
+  const handleInputChange = (field: string, value: any) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
 
   const loadCrmData = async () => {
     setLoading(true);
@@ -48,29 +48,22 @@ export const CRMView: React.FC = () => {
 
   useEffect(() => {
     loadCrmData();
+    setFormData({}); // Clear form on tab transition
   }, [activeTab, token]);
 
-  const handleCreateLead = async (e: React.FormEvent) => {
+  const handleCreateItem = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/crm/leads', {
+      const res = await fetch(`/api/crm/${activeTab}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({
-          name: leadName,
-          company: leadCompany,
-          email: leadEmail,
-          value: leadValue,
-          status: leadStatus
-        })
+        body: JSON.stringify(formData)
       });
       if (res.ok) {
-        setLeadName('');
-        setLeadCompany('');
-        setLeadEmail('');
+        setFormData({});
         setShowAddModal(false);
         loadCrmData();
       }
@@ -135,13 +128,13 @@ export const CRMView: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          {activeTab === 'leads' && user && ['admin', 'manager'].includes(user.role) && (
+          {user && ['admin', 'manager'].includes(user.role) && (
             <button
               onClick={() => setShowAddModal(true)}
               className="flex items-center gap-1 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs shadow-md transition-all cursor-pointer"
             >
               <Plus className="w-4 h-4" />
-              <span>Add Lead</span>
+              <span className="capitalize">Add {activeTab.slice(0, -1)}</span>
             </button>
           )}
           <button
@@ -338,70 +331,358 @@ export const CRMView: React.FC = () => {
         )}
       </div>
 
-      {/* Simple Add Lead Modal */}
+      {/* Dynamic Add CRM Item Modal */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50 animate-fade-in">
           <div className="bg-bg-secondary p-6 rounded-3xl border border-borderColor w-full max-w-sm shadow-xl space-y-4">
             <div>
-              <h3 className="text-sm font-bold text-text-primary">Add CRM Lead</h3>
-              <p className="text-[10px] text-text-secondary">Input customer profile criteria details.</p>
+              <h3 className="text-sm font-bold text-text-primary capitalize">Add CRM {activeTab.slice(0, -1)}</h3>
+              <p className="text-[10px] text-text-secondary">Input details for the new record.</p>
             </div>
 
-            <form onSubmit={handleCreateLead} className="space-y-3.5">
-              <div>
-                <label className="block text-[9px] font-bold text-text-secondary uppercase">Lead Name</label>
-                <input
-                  type="text"
-                  value={leadName}
-                  onChange={e => setLeadName(e.target.value)}
-                  className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
-                  required
-                />
-              </div>
+            <form onSubmit={handleCreateItem} className="space-y-3.5">
+              {activeTab === 'leads' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Lead Name</label>
+                    <input
+                      type="text"
+                      value={formData.name || ''}
+                      onChange={e => handleInputChange('name', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Company</label>
+                    <input
+                      type="text"
+                      value={formData.company || ''}
+                      onChange={e => handleInputChange('company', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Email Address</label>
+                    <input
+                      type="email"
+                      value={formData.email || ''}
+                      onChange={e => handleInputChange('email', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Deal Value ($)</label>
+                    <input
+                      type="number"
+                      value={formData.value || 10000}
+                      onChange={e => handleInputChange('value', Number(e.target.value))}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Status</label>
+                    <input
+                      type="text"
+                      value={formData.status || 'New'}
+                      onChange={e => handleInputChange('status', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
 
-              <div>
-                <label className="block text-[9px] font-bold text-text-secondary uppercase">Company</label>
-                <input
-                  type="text"
-                  value={leadCompany}
-                  onChange={e => setLeadCompany(e.target.value)}
-                  className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
-                  required
-                />
-              </div>
+              {activeTab === 'contacts' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Contact Name</label>
+                    <input
+                      type="text"
+                      value={formData.name || ''}
+                      onChange={e => handleInputChange('name', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Company</label>
+                    <input
+                      type="text"
+                      value={formData.company || ''}
+                      onChange={e => handleInputChange('company', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Email</label>
+                    <input
+                      type="email"
+                      value={formData.email || ''}
+                      onChange={e => handleInputChange('email', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Phone</label>
+                    <input
+                      type="text"
+                      value={formData.phone || ''}
+                      onChange={e => handleInputChange('phone', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Role</label>
+                    <input
+                      type="text"
+                      value={formData.role || ''}
+                      onChange={e => handleInputChange('role', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
 
-              <div>
-                <label className="block text-[9px] font-bold text-text-secondary uppercase">Email Address</label>
-                <input
-                  type="email"
-                  value={leadEmail}
-                  onChange={e => setLeadEmail(e.target.value)}
-                  className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
-                  required
-                />
-              </div>
+              {activeTab === 'deals' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Deal Title</label>
+                    <input
+                      type="text"
+                      value={formData.title || ''}
+                      onChange={e => handleInputChange('title', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Company</label>
+                    <input
+                      type="text"
+                      value={formData.company || ''}
+                      onChange={e => handleInputChange('company', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Value ($)</label>
+                    <input
+                      type="number"
+                      value={formData.value || 50000}
+                      onChange={e => handleInputChange('value', Number(e.target.value))}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Stage</label>
+                    <input
+                      type="text"
+                      value={formData.stage || 'Prospecting'}
+                      onChange={e => handleInputChange('stage', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Close Date</label>
+                    <input
+                      type="date"
+                      value={formData.closeDate || ''}
+                      onChange={e => handleInputChange('closeDate', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
 
-              <div>
-                <label className="block text-[9px] font-bold text-text-secondary uppercase">Deal Value ($)</label>
-                <input
-                  type="number"
-                  value={leadValue}
-                  onChange={e => setLeadValue(Number(e.target.value))}
-                  className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
-                />
-              </div>
+              {activeTab === 'tasks' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Task Title</label>
+                    <input
+                      type="text"
+                      value={formData.title || ''}
+                      onChange={e => handleInputChange('title', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Priority</label>
+                    <select
+                      value={formData.priority || 'Medium'}
+                      onChange={e => handleInputChange('priority', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs text-text-primary"
+                    >
+                      <option>Low</option>
+                      <option>Medium</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Status</label>
+                    <input
+                      type="text"
+                      value={formData.status || 'Not Started'}
+                      onChange={e => handleInputChange('status', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Due Date</label>
+                    <input
+                      type="date"
+                      value={formData.dueDate || ''}
+                      onChange={e => handleInputChange('dueDate', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'companies' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Company Name</label>
+                    <input
+                      type="text"
+                      value={formData.name || ''}
+                      onChange={e => handleInputChange('name', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Industry</label>
+                    <input
+                      type="text"
+                      value={formData.industry || ''}
+                      onChange={e => handleInputChange('industry', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Employees</label>
+                    <input
+                      type="number"
+                      value={formData.employees || 50}
+                      onChange={e => handleInputChange('employees', Number(e.target.value))}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Revenue ($)</label>
+                    <input
+                      type="number"
+                      value={formData.revenue || 1000000}
+                      onChange={e => handleInputChange('revenue', Number(e.target.value))}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'invoices' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Invoice #</label>
+                    <input
+                      type="text"
+                      value={formData.invoiceNumber || ''}
+                      onChange={e => handleInputChange('invoiceNumber', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Company</label>
+                    <input
+                      type="text"
+                      value={formData.company || ''}
+                      onChange={e => handleInputChange('company', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Amount ($)</label>
+                    <input
+                      type="number"
+                      value={formData.amount || 1500}
+                      onChange={e => handleInputChange('amount', Number(e.target.value))}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Status</label>
+                    <input
+                      type="text"
+                      value={formData.status || 'Draft'}
+                      onChange={e => handleInputChange('status', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'meetings' && (
+                <>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Meeting Title</label>
+                    <input
+                      type="text"
+                      value={formData.title || ''}
+                      onChange={e => handleInputChange('title', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Company</label>
+                    <input
+                      type="text"
+                      value={formData.company || ''}
+                      onChange={e => handleInputChange('company', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Time</label>
+                    <input
+                      type="datetime-local"
+                      value={formData.time || ''}
+                      onChange={e => handleInputChange('time', e.target.value)}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs text-text-primary"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-bold text-text-secondary uppercase">Duration (mins)</label>
+                    <input
+                      type="number"
+                      value={formData.duration || 30}
+                      onChange={e => handleInputChange('duration', Number(e.target.value))}
+                      className="w-full mt-1 px-3 py-2 bg-bg-primary border border-borderColor rounded-lg text-xs"
+                    />
+                  </div>
+                </>
+              )}
 
               <div className="flex gap-2 pt-2">
                 <button
                   type="submit"
-                  className="flex-1 bg-brand-500 text-white font-bold text-xs py-2 rounded-xl"
+                  className="flex-1 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs py-2 rounded-xl cursor-pointer shadow-md transition-colors"
                 >
                   Create
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="flex-1 border border-borderColor text-text-secondary font-bold text-xs py-2 rounded-xl"
+                  className="flex-1 border border-borderColor text-text-secondary hover:bg-bg-tertiary font-bold text-xs py-2 rounded-xl cursor-pointer transition-colors"
                 >
                   Cancel
                 </button>
