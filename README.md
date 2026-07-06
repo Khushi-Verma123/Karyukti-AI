@@ -91,10 +91,15 @@ The application begins with a Startup Wizard that personalizes the workspace by 
 **🎨 Switchable HSL Themes**
 
 <p>The interface supports five themes that update instantly across all styles:
-1. **Eclipse Dark**: Sleek deep dark mode.
+
+ 1. **Eclipse Dark**: Sleek deep dark mode.
+
 2. **Enterprise Light**: Corporate high contrast light layout.
+
 3. **Salesforce Ocean**: Light blue Salesforce-inspired theme.
+
 4. **Eucalyptus Sage**: Soft green palette to prevent eye fatigue.
+
 5. **Sepia Comfort**: Warm amber yellowish soft paper view.
 
 <img width="956" height="503" alt="Image" src="https://github.com/user-attachments/assets/cf92c7a0-5119-4fed-9590-74ba0215f4e5" />
@@ -103,12 +108,20 @@ The application begins with a Startup Wizard that personalizes the workspace by 
 </p>
 
  **🛡️ Security & Einstein Trust Layer Features**
-<p>1. **Role-Based Access Control (RBAC)**: Enforces API boundaries across three levels:
+<p>
+ 
+ 1. **Role-Based Access Control (RBAC)**: Enforces API boundaries across three levels:
+  
    - **Admin**: Complete system controls, MCP setups, deployment toggles, and audit logs.
+   
    - **Manager**: Agent definitions, workflow connections, and CRM summary metrics.
+   
    - **Worker**: Workspace chat, microphone triggers, and client files lookup.
+
 2. **PII Masking Interceptor**: Express middleware automatically strips sensitive data patterns (SSNs, credit card numbers, phone digits) from raw queries before passing inputs to the LLM compiler.
+
 3. **Prompt Moderation**: Blocks malicious injection phrases (e.g. `ignore previous instructions`, `bypass admin`) and records violation events in the logs.
+
 4. **Immutable Audit Trail**: Collects all login attempts, workspace chats, updates, and blocks in a searchable event log.</p>
 <img width="950" height="491" alt="Image" src="https://github.com/user-attachments/assets/538037cc-316c-464a-ad89-55dcabd64f48" />
 
@@ -155,37 +168,33 @@ Karyukti-AI/
 ```
 
 **🚀 Getting Started**
-<p>1. Clone Repository
+<p>
+ 1. Clone Repository
 git clone (https://github.com/Khushi-Verma123/Karyukti-AI.git)
-
-
 cd Karyukti-AI
-2. Install Dependencies
+
+ 2. Install Dependencies
 cd frontend
 npm install
-
 cd ../backend
 npm install
-3. Configure Environment
 
+3. Configure Environment
 Create a .env file:
 
 DATABASE_URL=your_database_url
 JWT_SECRET=your_secret
 PORT=4000
-
 ⚠️ Do not commit API keys, passwords, or secrets to GitHub.
+
 4. Start the Application
-
 Backend
-
 cd backend
 npm run dev
-
 Frontend
-
 cd frontend
 npm run dev
+
 5. Docker (Optional)
 docker compose up --build
 </p>
