@@ -25,6 +25,20 @@ Karyukti AI addresses this challenge by providing a unified enterprise platform 
 <p>Karyukti AI is a production-ready Enterprise AI Agent Platform inspired by modern business automation systems. Instead of depending on a single chatbot, the platform uses a collaborative Multi-Agent architecture where specialized agents work together to solve business problems.
 
 The application begins with a Startup Wizard that personalizes the workspace by selecting a business domain, user role, and preferred theme. Based on these selections, users enter dedicated Admin, Manager, or Worker dashboards with role-specific permissions and tools.</p>
+## 🌟 1. Core Concept & Value
+
+### **Vision**
+
+Karyukti AI is an enterprise-grade **Multi-Agent Business Automation Platform** designed to simplify how organizations interact with AI.
+
+Instead of relying on a single assistant, Karyukti AI introduces a collaborative ecosystem where multiple specialized agents work together to solve business problems, automate workflows, and support decision-making.
+
+Our objective is to make enterprise AI **accessible, customizable, secure, and scalable** for organizations of all sizes.
+### 🚀 Why Karyukti AI?
+
+Modern businesses use multiple disconnected systems for HR, CRM, Sales, Customer Support, Analytics, and Workflow Management. This fragmentation increases operational complexity, slows decision-making, and reduces productivity.
+
+Karyukti AI brings these capabilities together into a single intelligent workspace where specialized agents collaborate through a unified interface.
 
  **✨ Key Features**
 <p> 
