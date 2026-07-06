@@ -24,21 +24,26 @@ Karyukti AI addresses this challenge by providing a unified enterprise platform 
 
 <p>Karyukti AI is a production-ready Enterprise AI Agent Platform inspired by modern business automation systems. Instead of depending on a single chatbot, the platform uses a collaborative Multi-Agent architecture where specialized agents work together to solve business problems.
 
-The application begins with a Startup Wizard that personalizes the workspace by selecting a business domain, user role, and preferred theme. Based on these selections, users enter dedicated Admin, Manager, or Worker dashboards with role-specific permissions and tools.
+The application begins with a Startup Wizard that personalizes the workspace by selecting a business domain, user role, and preferred theme. Based on these selections, users enter dedicated Admin, Manager, or Worker dashboards with role-specific permissions and tools.</p>
 
-The platform supports:
+<p>
+  
+ **✨ Key Features**
+ 
+🤖 Multi-Agent Architecture
+🏢 Business Startup Wizard
+👥 Admin, Manager & Worker Dashboards
+🧩 Visual Agent & Workflow Builder
+📊 CRM Management
+📚 Knowledge Base
+🎤 Voice Assistant
+🎨 Five Dynamic Themes
+📈 Analytics Dashboard
+🔐 JWT Authentication & RBAC
+🔗 MCP Integration Ready
+🐳 Docker Deployment</p>
 
-Multi-Agent Collaboration
-Business-specific AI Configuration
-Custom Agent Builder
-Prebuilt Business Agents
-Visual Workflow Builder
-Enterprise CRM
-Knowledge Base
-Secure Role-Based Access
-Business Analytics
-Five Dynamic Themes
-Docker Deployment</p>
+
 ## 🏗️ System Architecture
 
 ```text
@@ -103,7 +108,7 @@ Docker Deployment</p>
 
 **## 🚀 Running the App**
 
-watch demo https://github.com/user-attachments/assets/379b89d3-116b-449e-968f-0792acdc61ce
+**watch demo** https://github.com/user-attachments/assets/379b89d3-116b-449e-968f-0792acdc61ce
 ```text
 
 **⚙️ Technology Stack**
@@ -205,7 +210,23 @@ Spin up both services inside Docker containers:
 ```bash
 docker-compose up --build
 ```
+**🛣️ Future Roadmap**
+🤖 Advanced Multi-Agent Collaboration
+🎙️ Enhanced Voice Assistant
+📱 Mobile Application
+☁️ Cloud Deployment
+🔍 Semantic Knowledge Search
+📊 Advanced Business Intelligence
+🔗 Additional MCP Connectors
+**🤝 Contributing**
 
+Contributions are welcome!
+
+Fork the repository.
+Create a new feature branch.
+Commit your changes.
+Push the branch.
+Open a Pull Request.
 ## 🎛️ Bypassing Login (Zero-Login Workspace)
 
 There is **no login page** in the codebase.
