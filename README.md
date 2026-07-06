@@ -32,9 +32,9 @@ The application begins with a Startup Wizard that personalizes the workspace by 
 Karyukti AI is an enterprise-grade **Multi-Agent Business Automation Platform** designed to simplify how organizations interact with AI.
 
 Instead of relying on a single assistant, Karyukti AI introduces a collaborative ecosystem where multiple specialized agents work together to solve business problems, automate workflows, and support decision-making.
-<img width="950" height="491" alt="Image" src="https://github.com/user-attachments/assets/d0dcdc05-9fb4-4c75-a407-a6496bcbb23b" />
+<img width="958" height="495" alt="Image" src="https://github.com/user-attachments/assets/02ccb54c-c5fa-4ec5-b3fb-9b21a02fb9a0" />
 
-<img width="959" height="500" alt="Image" src="https://github.com/user-attachments/assets/e7199b83-013a-4bfc-b35e-c0e03ed45a20" />
+<img width="950" height="485" alt="Image" src="https://github.com/user-attachments/assets/1bc25c4e-7e99-4a03-8df2-bc2b0c70fc92" />
 Our objective is to make enterprise AI **accessible, customizable, secure, and scalable** for organizations of all sizes.
 ### 🚀 Why Karyukti AI?
 
