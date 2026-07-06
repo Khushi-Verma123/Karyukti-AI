@@ -11,7 +11,7 @@ Karyukti AI is an enterprise-grade Multi-Agent Business Automation Platform that
 </p> It implements a complete AI Agent orchestration platform featuring secure role-based workspaces, visual triggers, visual builders, voice recognition, federated CRM lookups, and the **Einstein Trust Layer inspired security interceptors**.
 
 To satisfy the **"without using any API"** requirement, Karyukti packages an offline **Atlas Reasoning Engine** out of the box that compiles plans, schedules agent subtasks, and performs contextual actions locally. It also offers a Settings input to plug in a live Gemini API key if desired.
-<img width="956" height="503" alt="Image" src="[https://github.com/user-attachments/assets/cf92c7a0-5119-4fed-9590-74ba0215f4e5]/>
+watch demo https://github.com/user-attachments/assets/379b89d3-116b-449e-968f-0792acdc61ce
 
 
 **🌍 Problem Statement**
