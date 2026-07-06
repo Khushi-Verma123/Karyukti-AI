@@ -83,7 +83,9 @@ Docker Deployment</p>
 4. **Eucalyptus Sage**: Soft green palette to prevent eye fatigue.
 5. **Sepia Comfort**: Warm amber yellowish soft paper view.
 
----
+<img width="956" height="503" alt="Image" src="https://github.com/user-attachments/assets/cf92c7a0-5119-4fed-9590-74ba0215f4e5" />
+
+<img width="951" height="503" alt="Image" src="https://github.com/user-attachments/assets/109be5b3-08d1-4a6d-a36c-72bb705a2372" />
 </p>
  **🛡️ Security & Einstein Trust Layer Features
 **
