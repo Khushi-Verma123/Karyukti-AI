@@ -1,10 +1,10 @@
 # Karyukti AI | Enterprise Agentforce Platform
-
 </p>
 
 <p align="center">
 
 **Build Once. Automate Every Business.**
+<img width="959" height="500" alt="Image" src="https://github.com/user-attachments/assets/f6802220-9c46-4c6d-856e-c2ae99c28a96" />
 
 Karyukti AI is an enterprise-grade Multi-Agent Business Automation Platform that enables organizations to build, deploy, and manage intelligent AI agents through a secure, scalable, and modern workspace inspired by enterprise automation platforms.
 
@@ -157,6 +157,9 @@ Authentication	    JWT & Role-Based Access Control
 State               Management	Zustand
 Deployment     	    Docker
 Architecture	      Multi-Agent System + MCP Ready
+
+**Without any use of API and Login in this Agent **
+
 ```
 
 
