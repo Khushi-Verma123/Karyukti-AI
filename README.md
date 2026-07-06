@@ -89,8 +89,8 @@ Docker Deployment</p>
 
 <img width="951" height="503" alt="Image" src="https://github.com/user-attachments/assets/109be5b3-08d1-4a6d-a36c-72bb705a2372" />
 </p>
- **🛡️ Security & Einstein Trust Layer Features
-**
+
+ **🛡️ Security & Einstein Trust Layer Features**
 <p>1. **Role-Based Access Control (RBAC)**: Enforces API boundaries across three levels:
    - **Admin**: Complete system controls, MCP setups, deployment toggles, and audit logs.
    - **Manager**: Agent definitions, workflow connections, and CRM summary metrics.
@@ -98,19 +98,24 @@ Docker Deployment</p>
 2. **PII Masking Interceptor**: Express middleware automatically strips sensitive data patterns (SSNs, credit card numbers, phone digits) from raw queries before passing inputs to the LLM compiler.
 3. **Prompt Moderation**: Blocks malicious injection phrases (e.g. `ignore previous instructions`, `bypass admin`) and records violation events in the logs.
 4. **Immutable Audit Trail**: Collects all login attempts, workspace chats, updates, and blocks in a searchable event log.</p>
+<img width="950" height="491" alt="Image" src="https://github.com/user-attachments/assets/538037cc-316c-464a-ad89-55dcabd64f48" />
+
+<img width="959" height="500" alt="Image" src="https://github.com/user-attachments/assets/1c1f4ffc-750d-4717-88f5-1aba664cc7e5" />
+
 **## 🚀 Running the App**
 
-
+watch demo https://github.com/user-attachments/assets/379b89d3-116b-449e-968f-0792acdc61ce
 ```text
+
 **⚙️ Technology Stack**
 Layer	Technologies
-Frontend        	React, TypeScript, Tailwind CSS, Vite
-Backend        	Node.js, Express
-Database       	PostgreSQL, Prisma ORM
-Authentication	   JWT & Role-Based Access Control
-State             Management	Zustand
-Deployment     	Docker
-Architecture	   Multi-Agent System + MCP Ready
+Frontend        	  React, TypeScript, Tailwind CSS, Vite
+Backend            	Node.js, Express
+Database           	PostgreSQL, Prisma ORM
+Authentication	    JWT & Role-Based Access Control
+State               Management	Zustand
+Deployment     	    Docker
+Architecture	      Multi-Agent System + MCP Ready
 ```
 
 
