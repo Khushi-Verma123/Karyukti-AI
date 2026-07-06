@@ -26,23 +26,31 @@ Karyukti AI addresses this challenge by providing a unified enterprise platform 
 
 The application begins with a Startup Wizard that personalizes the workspace by selecting a business domain, user role, and preferred theme. Based on these selections, users enter dedicated Admin, Manager, or Worker dashboards with role-specific permissions and tools.</p>
 
-<p>
-```text  
  **✨ Key Features**
- 
+<p> 
 🤖 Multi-Agent Architecture
+ 
 🏢 Business Startup Wizard
+
 👥 Admin, Manager & Worker Dashboards
+
 🧩 Visual Agent & Workflow Builder
+
 📊 CRM Management
+
 📚 Knowledge Base
+
 🎤 Voice Assistant
+
 🎨 Five Dynamic Themes
+
 📈 Analytics Dashboard
+
 🔐 JWT Authentication & RBAC
+
 🔗 MCP Integration Ready
+
 🐳 Docker Deployment</p>
-```
 
 ## 🏗️ System Architecture
 
