@@ -143,7 +143,9 @@ Karyukti-AI/
 
 **🚀 Getting Started**
 <p>1. Clone Repository
-git clone [https://github.com/your-username/Karyukti-AI.git]
+git clone (https://github.com/Khushi-Verma123/Karyukti-AI.git)
+
+
 cd Karyukti-AI
 2. Install Dependencies
 cd frontend
