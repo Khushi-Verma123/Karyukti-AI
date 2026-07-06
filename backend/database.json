@@ -1,0 +1,1733 @@
+{
+  "users": [
+    {
+      "id": "u-admin",
+      "username": "admin@agentforce.com",
+      "passwordHash": "$2a$10$JxebvHUd5N3Xbad7e0aBL.pSehxMj/VGXBazyyVafIFpENac8e7cu",
+      "role": "admin",
+      "businessType": "IT Company",
+      "createdAt": "2026-07-05T18:04:09.077Z"
+    },
+    {
+      "id": "u-manager",
+      "username": "manager@agentforce.com",
+      "passwordHash": "$2a$10$JxebvHUd5N3Xbad7e0aBL.pSehxMj/VGXBazyyVafIFpENac8e7cu",
+      "role": "manager",
+      "businessType": "IT Company",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "u-worker",
+      "username": "worker@agentforce.com",
+      "passwordHash": "$2a$10$JxebvHUd5N3Xbad7e0aBL.pSehxMj/VGXBazyyVafIFpENac8e7cu",
+      "role": "worker",
+      "businessType": "Finance",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "agents": [
+    {
+      "id": "agent-prebuilt-1",
+      "name": "Sales Agent",
+      "businessType": "All",
+      "goal": "Drive leads and close customer deals",
+      "description": "Prebuilt automated sales qualification agent.",
+      "instructions": "Act as a Sales Agent. Help users accomplish: Drive leads and close customer deals. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-06T12:50:21.603Z"
+    },
+    {
+      "id": "agent-prebuilt-2",
+      "name": "Support Agent",
+      "businessType": "All",
+      "goal": "Resolve tickets and handle customer issues",
+      "description": "Prebuilt standard customer support agent.",
+      "instructions": "Act as a Support Agent. Help users accomplish: Resolve tickets and handle customer issues. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-06T07:52:17.108Z"
+    },
+    {
+      "id": "agent-prebuilt-3",
+      "name": "Marketing Agent",
+      "businessType": "All",
+      "goal": "Design campaigns and analyze engagement",
+      "description": "Prebuilt content planner and campaign auditor.",
+      "instructions": "Act as a Marketing Agent. Help users accomplish: Design campaigns and analyze engagement. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": false,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-4",
+      "name": "HR Agent",
+      "businessType": "All",
+      "goal": "Streamline employee onboarding and request management",
+      "description": "Prebuilt internal talent assistance agent.",
+      "instructions": "Act as a HR Agent. Help users accomplish: Streamline employee onboarding and request management. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-5",
+      "name": "Recruitment Agent",
+      "businessType": "All",
+      "goal": "Sift candidates, schedule interviews",
+      "description": "Prebuilt automated screening and scheduler agent.",
+      "instructions": "Act as a Recruitment Agent. Help users accomplish: Sift candidates, schedule interviews. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-6",
+      "name": "Finance Agent",
+      "businessType": "All",
+      "goal": "Track invoices, review balances, analyze profit margins",
+      "description": "Prebuilt accounting and metrics agent.",
+      "instructions": "Act as a Finance Agent. Help users accomplish: Track invoices, review balances, analyze profit margins. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-7",
+      "name": "Inventory Agent",
+      "businessType": "All",
+      "goal": "Monitor stock levels, issue order refills",
+      "description": "Prebuilt warehouse automation assistant.",
+      "instructions": "Act as a Inventory Agent. Help users accomplish: Monitor stock levels, issue order refills. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-8",
+      "name": "Healthcare Assistant",
+      "businessType": "All",
+      "goal": "Synthesize medical reports, manage appointment calendar",
+      "description": "HIPAA-aligned prebuilt medical assistant.",
+      "instructions": "Act as a Healthcare Assistant. Help users accomplish: Synthesize medical reports, manage appointment calendar. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-9",
+      "name": "Education Assistant",
+      "businessType": "All",
+      "goal": "Plan lessons, grade drafts, manage student logs",
+      "description": "Aide for course creators and educators.",
+      "instructions": "Act as a Education Assistant. Help users accomplish: Plan lessons, grade drafts, manage student logs. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-10",
+      "name": "Retail Assistant",
+      "businessType": "All",
+      "goal": "Answer product specs, track deliveries, process returns",
+      "description": "Digital storefront concierge agent.",
+      "instructions": "Act as a Retail Assistant. Help users accomplish: Answer product specs, track deliveries, process returns. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-11",
+      "name": "Restaurant Assistant",
+      "businessType": "All",
+      "goal": "Manage table bookings, review orders, edit menus",
+      "description": "Host and order manager assistant.",
+      "instructions": "Act as a Restaurant Assistant. Help users accomplish: Manage table bookings, review orders, edit menus. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-12",
+      "name": "CRM Assistant",
+      "businessType": "All",
+      "goal": "Lookup, update, and clean CRM storage data",
+      "description": "General manager for companies, deals, and leads.",
+      "instructions": "Act as a CRM Assistant. Help users accomplish: Lookup, update, and clean CRM storage data. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-13",
+      "name": "Analytics Agent",
+      "businessType": "All",
+      "goal": "Plot chart data, compute growth, forecast sales",
+      "description": "Data visualization and metrics agent.",
+      "instructions": "Act as a Analytics Agent. Help users accomplish: Plot chart data, compute growth, forecast sales. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-14",
+      "name": "Content Creator",
+      "businessType": "All",
+      "goal": "Draft blogs, emails, social posts",
+      "description": "Automated copywriter and editor.",
+      "instructions": "Act as a Content Creator. Help users accomplish: Draft blogs, emails, social posts. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-15",
+      "name": "Legal Assistant",
+      "businessType": "All",
+      "goal": "Parse clauses, check contract limits",
+      "description": "Legal review and terms parser agent.",
+      "instructions": "Act as a Legal Assistant. Help users accomplish: Parse clauses, check contract limits. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-16",
+      "name": "Customer Success Agent",
+      "businessType": "All",
+      "goal": "Retain high-value accounts, audit feedback logs",
+      "description": "Concierge for premium clients.",
+      "instructions": "Act as a Customer Success Agent. Help users accomplish: Retain high-value accounts, audit feedback logs. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-17",
+      "name": "Booking Agent",
+      "businessType": "All",
+      "goal": "Schedule appointments, check calendar status",
+      "description": "Automatic front desk booking assistant.",
+      "instructions": "Act as a Booking Agent. Help users accomplish: Schedule appointments, check calendar status. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-18",
+      "name": "Email Agent",
+      "businessType": "All",
+      "goal": "Draft follow-ups, read inputs, filter spam",
+      "description": "Inbox organizer and responder.",
+      "instructions": "Act as a Email Agent. Help users accomplish: Draft follow-ups, read inputs, filter spam. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "agent-prebuilt-19",
+      "name": "Workflow Agent",
+      "businessType": "All",
+      "goal": "Run triggers, fire API webhooks, sync systems",
+      "description": "Pipeline orchestrator agent.",
+      "instructions": "Act as a Workflow Agent. Help users accomplish: Run triggers, fire API webhooks, sync systems. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": true,
+      "publishedAt": "2026-07-05T18:59:56.915Z"
+    },
+    {
+      "id": "agent-prebuilt-20",
+      "name": "Knowledge Agent",
+      "businessType": "All",
+      "goal": "Index uploaded docs, provide citations and files search",
+      "description": "Advanced documentation search agent.",
+      "instructions": "Act as a Knowledge Agent. Help users accomplish: Index uploaded docs, provide citations and files search. Use CRM tools when requested. Keep replies professional, structured, and action-oriented.",
+      "files": [],
+      "tools": [
+        "crm_search",
+        "email_draft",
+        "report_generate",
+        "web_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional & Technical",
+      "permissions": [
+        "read_crm",
+        "write_crm"
+      ],
+      "workflow": [],
+      "isPrebuilt": true,
+      "isDeployed": false,
+      "publishedAt": "2026-07-05T18:59:58.329Z"
+    },
+    {
+      "id": "agent-custom-1783276382828",
+      "name": "myAI",
+      "businessType": "Retail",
+      "goal": "connect with more than 500 persons in 1 week",
+      "description": "",
+      "instructions": "AI should talk politely to the customers and give them information about the company that is meesho",
+      "files": [],
+      "tools": [
+        "web_search",
+        "crm_search"
+      ],
+      "memory": true,
+      "temperature": 1,
+      "reasoningLevel": "medium",
+      "modelSelection": "Gemini 3.5 Pro",
+      "responseStyle": "Professional",
+      "permissions": [],
+      "workflow": [],
+      "isPrebuilt": false,
+      "isDeployed": false,
+      "publishedAt": "2026-07-05T18:59:59.931Z"
+    },
+    {
+      "id": "agent-custom-1783324490160",
+      "name": "writer",
+      "businessType": "IT Company",
+      "goal": "create a write up on demand if user",
+      "description": "",
+      "instructions": "Primary Behavior\n\nWhenever a user asks you to write, draft, create, generate, rewrite, improve, summarize, or edit any content, generate the complete document immediately.\n\nTypes of Content You Can Generate\nEmails\nOffer letters\nAppointment letters\nHR policies\nSOPs\nEmployee handbooks\nJob descriptions\nInterview questions\nPerformance reviews\nWarning letters\nAppreciation letters\nLeave approval/rejection letters\nMeeting minutes\nReports\nNotices\nAnnouncements\nTraining documents\nTemplates\nBusiness documents\nGeneral articles and write-ups\nWriting Rules\nProduce polished, professional, and grammatically correct content.\nDo not ask unnecessary follow-up questions if enough information is already available.\nIf essential information is missing (such as company name, employee name, date, or role), use sensible placeholders like:\n[Company Name]\n[Employee Name]\n[Manager Name]\n[Date]\nAdapt the tone to the user's request (formal, friendly, professional, concise, detailed, persuasive, or executive).\nFormat the output with clear headings, paragraphs, and bullet points where appropriate.\nWhen requested, also provide shorter, longer, or simplified versions.\nRewrite Behavior\n\nIf the user provides existing text:\n\nCorrect grammar.\nImprove clarity.\nImprove professionalism.\nPreserve the original meaning unless instructed otherwise.\nOutput Policy\n\nGenerate the requested content directly instead of explaining how to write it.\nAvoid unnecessary introductions or disclaimers.\nReturn the finished document ready for immediate use.\n\nHR Context\n\nWhen the request relates to HR, prioritize:\n\nCompliance\nProfessional communication\nEmployee-friendly language\nClear action items\nAppropriate business formatting\nGeneral Capability\n\nYou are not limited to HR documents. If the user requests any type of writing, generate high-quality content on demand.",
+      "files": [],
+      "tools": [
+        "web_search",
+        "crm_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "low",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional",
+      "permissions": [],
+      "workflow": [],
+      "isPrebuilt": false,
+      "isDeployed": true,
+      "publishedAt": "2026-07-06T07:54:57.420Z"
+    },
+    {
+      "id": "agent-custom-1783342850394",
+      "name": "study agent",
+      "businessType": "IT Company",
+      "goal": "Empower learners by providing personalized, structured, and interactive learning experiences that improve understanding, retention, problem-solving skills, and academic performance.Create personalized study plans based on user goals. Explain concepts from beginner to advanced levels. Answer academic questions accurately and clearly. Break complex topics into simple, understandable steps. Generate quizzes, MCQs, flashcards, and practice questions. Track study progress and suggest improvements. Recommend revision schedules and study strategies. Help users prepare for exams and interviews. Encourage consistent learning habits. Adapt explanations according to the learner's level.",
+      "description": "",
+      "instructions": "You are an intelligent Study Assistant responsible for helping users learn efficiently.\n\nYour responsibilities include:\n\n• Explain concepts clearly using simple language.\n• Adapt explanations based on the user's knowledge level.\n• Break difficult topics into smaller learning steps.\n• Generate summaries, notes, flashcards, and quizzes.\n• Solve numerical and theoretical questions with detailed reasoning.\n• Encourage critical thinking instead of only providing answers.\n• Suggest study plans and revision schedules.\n• Recommend reliable learning resources when appropriate.\n• Maintain a friendly, patient, and encouraging tone.\n• Remember the user's learning goals within the current session.\n• If information is uncertain, clearly mention it instead of guessing.\n• Never provide misleading academic information.\n• Format responses using headings, bullet points, tables, and examples whenever helpful.\n• Keep explanations concise unless the user requests detailed information.",
+      "files": [],
+      "tools": [
+        "web_search",
+        "crm_search"
+      ],
+      "memory": true,
+      "temperature": 0.7,
+      "reasoningLevel": "high",
+      "modelSelection": "Gemini 3.5 Flash",
+      "responseStyle": "Professional",
+      "permissions": [],
+      "workflow": [],
+      "isPrebuilt": false,
+      "isDeployed": true,
+      "publishedAt": "2026-07-06T13:00:58.265Z"
+    }
+  ],
+  "crm_leads": [
+    {
+      "id": "l-2",
+      "name": "John Doe",
+      "company": "Apex Health Ltd",
+      "email": "jdoe@apexhealth.org",
+      "value": 120000,
+      "status": "Proposal",
+      "assignedTo": "worker@agentforce.com",
+      "notes": "Requires HIPAA standard certification.",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "l-3",
+      "name": "Alice Smith",
+      "company": "Infinite Retail Inc",
+      "email": "asmith@infiniteretail.com",
+      "value": 18000,
+      "status": "New",
+      "assignedTo": null,
+      "notes": "Contacted via storefront webform.",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "l-1783280306332",
+      "name": "camp",
+      "company": "newatrun",
+      "email": "newatrun@gmail.com",
+      "value": 10000,
+      "status": "New",
+      "assignedTo": null,
+      "notes": "",
+      "createdAt": "2026-07-05T19:38:26.332Z"
+    },
+    {
+      "id": "l-1783323039706",
+      "name": "kavita",
+      "company": "newatrun",
+      "email": "newatrun@gmail.com",
+      "value": 10000,
+      "status": "New",
+      "assignedTo": null,
+      "notes": "",
+      "createdAt": "2026-07-06T07:30:39.706Z"
+    }
+  ],
+  "crm_contacts": [
+    {
+      "id": "con-1",
+      "name": "Sarah Connor",
+      "email": "sconnor@globaltech.com",
+      "phone": "+1-555-0199",
+      "company": "Global Tech Corp",
+      "role": "CTO",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "con-2",
+      "name": "John Doe",
+      "email": "jdoe@apexhealth.org",
+      "phone": "+1-555-0144",
+      "company": "Apex Health Ltd",
+      "role": "Head of IT",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "crm_deals": [
+    {
+      "id": "d-1",
+      "title": "Agentforce Platform Licensing",
+      "company": "Global Tech Corp",
+      "value": 85000,
+      "stage": "Negotiation",
+      "closeDate": "2026-08-30",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "d-2",
+      "title": "Healthcare Assistant Rollout",
+      "company": "Apex Health Ltd",
+      "value": 120000,
+      "stage": "Proposal",
+      "closeDate": "2026-09-15",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "crm_tasks": [
+    {
+      "id": "t-1",
+      "title": "Prepare sales deck for Global Tech",
+      "status": "In Progress",
+      "priority": "High",
+      "dueDate": "2026-07-10",
+      "assignedTo": "manager@agentforce.com",
+      "description": "Highlight Atlas reasoning and trust layer.",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "t-2",
+      "title": "Send security documentation to Apex",
+      "status": "Pending",
+      "priority": "High",
+      "dueDate": "2026-07-15",
+      "assignedTo": "worker@agentforce.com",
+      "description": "Detail Einstein Trust layer inspired protections.",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "crm_companies": [
+    {
+      "id": "c-1",
+      "name": "Global Tech Corp",
+      "domain": "globaltech.com",
+      "industry": "IT Company",
+      "employees": 1200,
+      "revenue": 45000000,
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "c-2",
+      "name": "Apex Health Ltd",
+      "domain": "apexhealth.org",
+      "industry": "Healthcare",
+      "employees": 450,
+      "revenue": 15000000,
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "c-3",
+      "name": "Infinite Retail Inc",
+      "domain": "infiniteretail.com",
+      "industry": "Retail",
+      "employees": 80,
+      "revenue": 2400000,
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "crm_invoices": [
+    {
+      "id": "inv-1",
+      "invoiceNumber": "INV-2026-001",
+      "company": "Global Tech Corp",
+      "amount": 85000,
+      "status": "Sent",
+      "dueDate": "2026-08-15",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "inv-2",
+      "invoiceNumber": "INV-2026-002",
+      "company": "Apex Health Ltd",
+      "amount": 30000,
+      "status": "Paid",
+      "dueDate": "2026-07-01",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "crm_meetings": [
+    {
+      "id": "m-1",
+      "title": "Intro Demo & Requirements Gathering",
+      "company": "Global Tech Corp",
+      "time": "2026-07-08T10:00:00Z",
+      "duration": 45,
+      "notes": "Showed custom agent builder.",
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "knowledge_documents": [],
+  "workflows": [
+    {
+      "id": "wf-1",
+      "name": "Auto Lead Qualification & Alert",
+      "description": "Qualifies new leads and creates tasks + emails sales team.",
+      "isDeployed": true,
+      "steps": [
+        {
+          "id": "s-1",
+          "type": "trigger",
+          "label": "New Lead Created",
+          "config": {
+            "entity": "lead"
+          }
+        },
+        {
+          "id": "s-2",
+          "type": "condition",
+          "label": "Lead Value > $50,000",
+          "config": {
+            "field": "value",
+            "op": "gt",
+            "val": 50000
+          }
+        },
+        {
+          "id": "s-3",
+          "type": "action",
+          "label": "Set Status to Qualified",
+          "config": {
+            "action": "update_status",
+            "val": "Qualified"
+          }
+        },
+        {
+          "id": "s-4",
+          "type": "crm",
+          "label": "Create Sales Followup Task",
+          "config": {
+            "title": "High value lead callback",
+            "priority": "High"
+          }
+        },
+        {
+          "id": "s-5",
+          "type": "notification",
+          "label": "Slack Alert: Big Lead Qualified!",
+          "config": {
+            "channel": "#sales-alerts"
+          }
+        }
+      ],
+      "createdAt": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "log-1783345368143-73czw",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-06T13:42:48.144Z"
+    },
+    {
+      "id": "log-1783345363323-c4m1r",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-06T13:42:43.323Z"
+    },
+    {
+      "id": "log-1783343540892-hg0d1",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T13:12:20.892Z"
+    },
+    {
+      "id": "log-1783343250781-edd3b",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T13:07:30.781Z"
+    },
+    {
+      "id": "log-1783342926708-cr574",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "Business Updated",
+      "details": "Updated active business context to: IT Company",
+      "timestamp": "2026-07-06T13:02:06.708Z"
+    },
+    {
+      "id": "log-1783342862695-cla08",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-06T13:01:02.695Z"
+    },
+    {
+      "id": "log-1783342858266-v4qa9",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"study agent\" status changed to: Active",
+      "timestamp": "2026-07-06T13:00:58.267Z"
+    },
+    {
+      "id": "log-1783342850396-w454m",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Created",
+      "details": "Custom AI Agent \"study agent\" created by admin@agentforce.com.",
+      "timestamp": "2026-07-06T13:00:50.396Z"
+    },
+    {
+      "id": "log-1783342221604-gqro1",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"Sales Agent\" status changed to: Active",
+      "timestamp": "2026-07-06T12:50:21.604Z"
+    },
+    {
+      "id": "log-1783342215380-nrw28",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T12:50:15.380Z"
+    },
+    {
+      "id": "log-1783342191039-40k5e",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-06T12:49:51.039Z"
+    },
+    {
+      "id": "log-1783342178542-fwga2",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-06T12:49:38.542Z"
+    },
+    {
+      "id": "log-1783342092726-3c0sj",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T12:48:12.726Z"
+    },
+    {
+      "id": "log-1783341992909-w5ycv",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-06T12:46:32.909Z"
+    },
+    {
+      "id": "log-1783341981553-k23on",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-06T12:46:21.553Z"
+    },
+    {
+      "id": "log-1783327156884-zygif",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Support Agent\". Query: \"tell me about yourself...\"",
+      "timestamp": "2026-07-06T08:39:16.884Z"
+    },
+    {
+      "id": "log-1783327014611-wdspe",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T08:36:54.611Z"
+    },
+    {
+      "id": "log-1783325492518-9y5mk",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-06T08:11:32.518Z"
+    },
+    {
+      "id": "log-1783325481525-6iajw",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-06T08:11:21.525Z"
+    },
+    {
+      "id": "log-1783325364251-d3q1y",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Support Agent\". Query: \"Hello...\"",
+      "timestamp": "2026-07-06T08:09:24.251Z"
+    },
+    {
+      "id": "log-1783325342958-cxn6x",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T08:09:02.958Z"
+    },
+    {
+      "id": "log-1783325341040-37i9z",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T08:09:01.040Z"
+    },
+    {
+      "id": "log-1783324528312-7jy3n",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"writer\". Query: \"create a g mail leave requestin to my company ...\"",
+      "timestamp": "2026-07-06T07:55:28.312Z"
+    },
+    {
+      "id": "log-1783324497422-juyz0",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"writer\" status changed to: Active",
+      "timestamp": "2026-07-06T07:54:57.422Z"
+    },
+    {
+      "id": "log-1783324490166-1j8g2",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Created",
+      "details": "Custom AI Agent \"writer\" created by admin@agentforce.com.",
+      "timestamp": "2026-07-06T07:54:50.166Z"
+    },
+    {
+      "id": "log-1783324337112-4rkrx",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"Support Agent\" status changed to: Active",
+      "timestamp": "2026-07-06T07:52:17.112Z"
+    },
+    {
+      "id": "log-1783324335448-ipmm1",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Sales Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-06T07:52:15.448Z"
+    },
+    {
+      "id": "log-1783324314770-2gvqx",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"create a task for lead  kavita ...\"",
+      "timestamp": "2026-07-06T07:51:54.770Z"
+    },
+    {
+      "id": "log-1783324246710-hm1jv",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"mera nam joker...\"",
+      "timestamp": "2026-07-06T07:50:46.710Z"
+    },
+    {
+      "id": "log-1783323550794-3avzf",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Business Updated",
+      "details": "Updated active business context to: IT Company",
+      "timestamp": "2026-07-06T07:39:10.794Z"
+    },
+    {
+      "id": "log-1783323383003-frb7m",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"i told you to add a lead karuna...\"",
+      "timestamp": "2026-07-06T07:36:23.003Z"
+    },
+    {
+      "id": "log-1783323358191-af6ma",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"i told you to add a lead karuna...\"",
+      "timestamp": "2026-07-06T07:35:58.191Z"
+    },
+    {
+      "id": "log-1783323210930-6e9z1",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "MCP Connection Changed",
+      "details": "MCP Server \"Collaboration Hub MCP\" status set to: connected",
+      "timestamp": "2026-07-06T07:33:30.930Z"
+    },
+    {
+      "id": "log-1783323208956-aaeib",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "MCP Connection Changed",
+      "details": "MCP Server \"Enterprise DB MCP\" status set to: connected",
+      "timestamp": "2026-07-06T07:33:28.956Z"
+    },
+    {
+      "id": "log-1783323207983-94ny3",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "MCP Connection Changed",
+      "details": "MCP Server \"Enterprise DB MCP\" status set to: disconnected",
+      "timestamp": "2026-07-06T07:33:27.983Z"
+    },
+    {
+      "id": "log-1783323202736-gizqo",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "MCP Connection Changed",
+      "details": "MCP Server \"Google Workspace MCP\" status set to: connected",
+      "timestamp": "2026-07-06T07:33:22.736Z"
+    },
+    {
+      "id": "log-1783323200625-9rea1",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "MCP Connection Changed",
+      "details": "MCP Server \"Google Workspace MCP\" status set to: disconnected",
+      "timestamp": "2026-07-06T07:33:20.625Z"
+    },
+    {
+      "id": "log-1783323155934-voh21",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Workflow Deleted",
+      "details": "Workflow \"wf-1783323135977\" deleted.",
+      "timestamp": "2026-07-06T07:32:35.934Z"
+    },
+    {
+      "id": "log-1783323135981-om7aj",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Workflow Created",
+      "details": "Workflow \"new workflow\" created by admin@agentforce.com.",
+      "timestamp": "2026-07-06T07:32:15.981Z"
+    },
+    {
+      "id": "log-1783323039707-myi92",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "CRM Change",
+      "details": "Lead \"kavita\" created.",
+      "timestamp": "2026-07-06T07:30:39.707Z"
+    },
+    {
+      "id": "log-1783322928187-pbj3k",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"i told you to add a lead karuna ...\"",
+      "timestamp": "2026-07-06T07:28:48.188Z"
+    },
+    {
+      "id": "log-1783322907652-nco16",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"add a lead karuna...\"",
+      "timestamp": "2026-07-06T07:28:27.652Z"
+    },
+    {
+      "id": "log-1783322717731-shcwu",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"add a lead karuna...\"",
+      "timestamp": "2026-07-06T07:25:17.731Z"
+    },
+    {
+      "id": "log-1783322689017-tz1xq",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"hello...\"",
+      "timestamp": "2026-07-06T07:24:49.017Z"
+    },
+    {
+      "id": "log-1783322577215-54izk",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-06T07:22:57.215Z"
+    },
+    {
+      "id": "log-1783322246578-a64p0",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Inventory Agent\". Query: \"add a lead by named kashi...\"",
+      "timestamp": "2026-07-06T07:17:26.578Z"
+    },
+    {
+      "id": "log-1783322177445-bsa30",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Inventory Agent\". Query: \"what can you do for me ...\"",
+      "timestamp": "2026-07-06T07:16:17.445Z"
+    },
+    {
+      "id": "log-1783322093347-6ri7l",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"create a task for this...\"",
+      "timestamp": "2026-07-06T07:14:53.347Z"
+    },
+    {
+      "id": "log-1783322021971-h3vs5",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"may ask you a question...\"",
+      "timestamp": "2026-07-06T07:13:41.971Z"
+    },
+    {
+      "id": "log-1783321517480-guymd",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-06T07:05:17.480Z"
+    },
+    {
+      "id": "log-1783321503387-i9ybv",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-06T07:05:03.387Z"
+    },
+    {
+      "id": "log-1783280306334-a7x2m",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "CRM Change",
+      "details": "Lead \"camp\" created.",
+      "timestamp": "2026-07-05T19:38:26.334Z"
+    },
+    {
+      "id": "log-1783280023328-h188c",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T19:33:43.328Z"
+    },
+    {
+      "id": "log-1783279981879-6hl2w",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"hii...\"",
+      "timestamp": "2026-07-05T19:33:01.879Z"
+    },
+    {
+      "id": "log-1783279889177-jbjoa",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "Business Updated",
+      "details": "Updated active business context to: Education",
+      "timestamp": "2026-07-05T19:31:29.177Z"
+    },
+    {
+      "id": "log-1783279629284-yfulk",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "CRM Change",
+      "details": "Lead \"l-1\" deleted.",
+      "timestamp": "2026-07-05T19:27:09.284Z"
+    },
+    {
+      "id": "log-1783279613730-ihtdl",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Healthcare Assistant\". Query: \"Hello...\"",
+      "timestamp": "2026-07-05T19:26:53.730Z"
+    },
+    {
+      "id": "log-1783279443356-7f3ak",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T19:24:03.356Z"
+    },
+    {
+      "id": "log-1783279435035-gzjfm",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"Sales Agent\" status changed to: Active",
+      "timestamp": "2026-07-05T19:23:55.035Z"
+    },
+    {
+      "id": "log-1783278942027-7b2kz",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Education Assistant\". Query: \"hello...\"",
+      "timestamp": "2026-07-05T19:15:42.027Z"
+    },
+    {
+      "id": "log-1783278496868-68g98",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"HR Agent\". Query: \"A new employee joins tomorrow. Generate an onboard...\"",
+      "timestamp": "2026-07-05T19:08:16.868Z"
+    },
+    {
+      "id": "log-1783278376586-t41ci",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"HR Agent\". Query: \"hello...\"",
+      "timestamp": "2026-07-05T19:06:16.586Z"
+    },
+    {
+      "id": "log-1783278367026-6kcxh",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T19:06:07.026Z"
+    },
+    {
+      "id": "log-1783278111244-1k496",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Healthcare Assistant\". Query: \"assist me for my healthy life as I am 20 years old...\"",
+      "timestamp": "2026-07-05T19:01:51.244Z"
+    },
+    {
+      "id": "log-1783278046410-jmipf",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T19:00:46.410Z"
+    },
+    {
+      "id": "log-1783278036011-72udp",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"myAI\" status changed to: Inactive",
+      "timestamp": "2026-07-05T19:00:36.011Z"
+    },
+    {
+      "id": "log-1783278034185-t5qwn",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Knowledge Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T19:00:34.185Z"
+    },
+    {
+      "id": "log-1783278023291-2wt4l",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T19:00:23.291Z"
+    },
+    {
+      "id": "log-1783278010423-sxn83",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T19:00:10.423Z"
+    },
+    {
+      "id": "log-1783278007635-5em6d",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Marketing Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T19:00:07.635Z"
+    },
+    {
+      "id": "log-1783278006163-ep4kr",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Support Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T19:00:06.163Z"
+    },
+    {
+      "id": "log-1783278004569-rimqm",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Sales Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T19:00:04.569Z"
+    },
+    {
+      "id": "log-1783277999932-8qcbk",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"myAI\" status changed to: Active",
+      "timestamp": "2026-07-05T18:59:59.932Z"
+    },
+    {
+      "id": "log-1783277998329-263cr",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"Knowledge Agent\" status changed to: Active",
+      "timestamp": "2026-07-05T18:59:58.329Z"
+    },
+    {
+      "id": "log-1783277996915-fhli7",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"Workflow Agent\" status changed to: Active",
+      "timestamp": "2026-07-05T18:59:56.915Z"
+    },
+    {
+      "id": "log-1783277995538-fu6xt",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Workflow Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T18:59:55.538Z"
+    },
+    {
+      "id": "log-1783277992980-u86mh",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Knowledge Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T18:59:52.980Z"
+    },
+    {
+      "id": "log-1783277941591-4a8q8",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"hello what problems can you handle...\"",
+      "timestamp": "2026-07-05T18:59:01.591Z"
+    },
+    {
+      "id": "log-1783277904905-mfyp8",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Deployed",
+      "details": "Agent \"Knowledge Agent\" status changed to: Active",
+      "timestamp": "2026-07-05T18:58:24.905Z"
+    },
+    {
+      "id": "log-1783277881962-eg66e",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:58:01.962Z"
+    },
+    {
+      "id": "log-1783277799383-w0wpv",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"i'm a worker in meesho ...\"",
+      "timestamp": "2026-07-05T18:56:39.383Z"
+    },
+    {
+      "id": "log-1783277659138-ravr0",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "Agent Conversation",
+      "details": "Chat with agent \"Sales Agent\". Query: \"hello ...\"",
+      "timestamp": "2026-07-05T18:54:19.138Z"
+    },
+    {
+      "id": "log-1783277651784-2awoy",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-05T18:54:11.784Z"
+    },
+    {
+      "id": "log-1783277643898-9vqmp",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T18:54:03.898Z"
+    },
+    {
+      "id": "log-1783276424201-orrt0",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:33:44.201Z"
+    },
+    {
+      "id": "log-1783276419913-bl7np",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-05T18:33:39.913Z"
+    },
+    {
+      "id": "log-1783276409988-jyfp6",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T18:33:29.988Z"
+    },
+    {
+      "id": "log-1783276382829-m95wg",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Created",
+      "details": "Custom AI Agent \"myAI\" created by admin@agentforce.com.",
+      "timestamp": "2026-07-05T18:33:02.829Z"
+    },
+    {
+      "id": "log-1783276235863-26csv",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "Agent Undeployed",
+      "details": "Agent \"Knowledge Agent\" status changed to: Inactive",
+      "timestamp": "2026-07-05T18:30:35.863Z"
+    },
+    {
+      "id": "log-1783276225385-dhe9t",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:30:25.385Z"
+    },
+    {
+      "id": "log-1783276167242-kr0k7",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T18:29:27.242Z"
+    },
+    {
+      "id": "log-1783276035888-9d7rw",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:27:15.888Z"
+    },
+    {
+      "id": "log-1783276020200-k3eg1",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-05T18:27:00.200Z"
+    },
+    {
+      "id": "log-1783276008695-5gagb",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:26:48.695Z"
+    },
+    {
+      "id": "log-1783276001995-jfffe",
+      "userId": "u-worker",
+      "username": "worker@agentforce.com",
+      "action": "User Login",
+      "details": "User worker@agentforce.com logged in successfully with role: worker.",
+      "timestamp": "2026-07-05T18:26:41.995Z"
+    },
+    {
+      "id": "log-1783275996250-9y3fh",
+      "userId": "u-manager",
+      "username": "manager@agentforce.com",
+      "action": "User Login",
+      "details": "User manager@agentforce.com logged in successfully with role: manager.",
+      "timestamp": "2026-07-05T18:26:36.250Z"
+    },
+    {
+      "id": "log-1783275984493-wrrzq",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:26:24.493Z"
+    },
+    {
+      "id": "log-1783275984362-xax37",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:26:24.362Z"
+    },
+    {
+      "id": "log-1783275481614-4l9l0",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:18:01.614Z"
+    },
+    {
+      "id": "log-1783275481486-zgg7e",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "User Login",
+      "details": "User admin@agentforce.com logged in successfully with role: admin.",
+      "timestamp": "2026-07-05T18:18:01.486Z"
+    },
+    {
+      "id": "log-1",
+      "userId": "u-admin",
+      "username": "admin@agentforce.com",
+      "action": "System Setup",
+      "details": "Initialized database and seeded defaults.",
+      "timestamp": "2026-07-05T18:04:09.078Z"
+    }
+  ],
+  "mcp_servers": [
+    {
+      "id": "mcp-1",
+      "name": "Enterprise DB MCP",
+      "status": "connected",
+      "url": "http://localhost:3001/mcp/db",
+      "type": "Database",
+      "tools": [
+        "db_query",
+        "db_schema",
+        "db_export"
+      ],
+      "connectedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "mcp-2",
+      "name": "Google Workspace MCP",
+      "status": "connected",
+      "url": "http://localhost:3001/mcp/gsuite",
+      "type": "Google Drive",
+      "tools": [
+        "drive_search",
+        "calendar_list",
+        "email_send"
+      ],
+      "connectedAt": "2026-07-05T18:04:09.078Z"
+    },
+    {
+      "id": "mcp-3",
+      "name": "Collaboration Hub MCP",
+      "status": "connected",
+      "url": "http://localhost:3001/mcp/collab",
+      "type": "Slack",
+      "tools": [
+        "slack_post",
+        "slack_read_channel"
+      ],
+      "connectedAt": "2026-07-05T18:04:09.078Z"
+    }
+  ]
+}

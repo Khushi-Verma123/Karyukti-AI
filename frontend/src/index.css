@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Configurations */
+:root, [data-theme="light"] {
+  --color-brand-50: 226 100% 97%;
+  --color-brand-100: 226 100% 93%;
+  --color-brand-500: 225 73% 57%;
+  --color-brand-600: 224 64% 50%;
+  --color-brand-700: 224 64% 42%;
+  
+  --color-bg-primary: 210 20% 98%;
+  --color-bg-secondary: 0 0% 100%;
+  --color-bg-tertiary: 210 20% 94%;
+  
+  --color-text-primary: 215 28% 17%;
+  --color-text-secondary: 215 16% 47%;
+  --color-text-muted: 215 16% 65%;
+  
+  --color-border: 214 32% 91%;
+}
+
+[data-theme="dark"] {
+  --color-brand-50: 250 30% 15%;
+  --color-brand-100: 250 30% 25%;
+  --color-brand-500: 250 85% 65%;
+  --color-brand-600: 250 85% 72%;
+  --color-brand-700: 250 85% 80%;
+  
+  --color-bg-primary: 224 25% 10%;
+  --color-bg-secondary: 224 25% 14%;
+  --color-bg-tertiary: 224 25% 18%;
+  
+  --color-text-primary: 210 20% 98%;
+  --color-text-secondary: 215 20% 70%;
+  --color-text-muted: 215 15% 50%;
+  
+  --color-border: 224 25% 20%;
+}
+
+[data-theme="light-blue"] {
+  --color-brand-50: 195 100% 95%;
+  --color-brand-100: 195 100% 88%;
+  --color-brand-500: 199 89% 48%;
+  --color-brand-600: 199 89% 40%;
+  --color-brand-700: 199 89% 32%;
+  
+  --color-bg-primary: 200 40% 97%;
+  --color-bg-secondary: 0 0% 100%;
+  --color-bg-tertiary: 200 30% 93%;
+  
+  --color-text-primary: 200 80% 12%;
+  --color-text-secondary: 200 40% 40%;
+  --color-text-muted: 200 25% 60%;
+  
+  --color-border: 200 30% 88%;
+}
+
+[data-theme="eye-green"] {
+  --color-brand-50: 140 30% 95%;
+  --color-brand-100: 140 30% 88%;
+  --color-brand-500: 145 63% 32%;
+  --color-brand-600: 145 63% 26%;
+  --color-brand-700: 145 63% 20%;
+  
+  --color-bg-primary: 135 25% 96%;
+  --color-bg-secondary: 135 20% 98%;
+  --color-bg-tertiary: 135 20% 91%;
+  
+  --color-text-primary: 150 45% 12%;
+  --color-text-secondary: 145 20% 36%;
+  --color-text-muted: 145 15% 55%;
+  
+  --color-border: 140 20% 86%;
+}
+
+[data-theme="yellow-comfort"] {
+  --color-brand-50: 38 70% 94%;
+  --color-brand-100: 38 60% 88%;
+  --color-brand-500: 35 75% 45%;
+  --color-brand-600: 35 75% 38%;
+  --color-brand-700: 35 75% 30%;
+  
+  --color-bg-primary: 40 40% 95%;
+  --color-bg-secondary: 40 40% 98%;
+  --color-bg-tertiary: 40 30% 90%;
+  
+  --color-text-primary: 30 50% 12%;
+  --color-text-secondary: 35 30% 36%;
+  --color-text-muted: 35 20% 55%;
+  
+  --color-border: 38 30% 85%;
+}
+
+/* Map CSS variables to Tailwind HSL configuration */
+:root {
+  --color-brand-50: 226 100% 97%;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 50%, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 0%, 50%, 0.4);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+[data-theme="dark"] .glass {
+  background: rgba(15, 22, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-premium {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+[data-theme="dark"] .glass-premium {
+  background: linear-gradient(135deg, rgba(15, 22, 42, 0.7) 0%, rgba(10, 15, 30, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-slide-in {
+  animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
