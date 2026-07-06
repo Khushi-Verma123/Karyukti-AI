@@ -4,7 +4,7 @@
 
 <p align="center">
 
-Build Once. Automate Every Business.
+**Build Once. Automate Every Business.**
 
 Karyukti AI is an enterprise-grade Multi-Agent Business Automation Platform that enables organizations to build, deploy, and manage intelligent AI agents through a secure, scalable, and modern workspace inspired by enterprise automation platforms.
 
